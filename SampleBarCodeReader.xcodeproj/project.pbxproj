@@ -14,6 +14,8 @@
 		5D300E5D1D6D701E000401FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D300E5B1D6D701E000401FF /* LaunchScreen.storyboard */; };
 		5D300E681D6D701F000401FF /* SampleBarCodeReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D300E671D6D701F000401FF /* SampleBarCodeReaderTests.swift */; };
 		5D300E731D6D701F000401FF /* SampleBarCodeReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D300E721D6D701F000401FF /* SampleBarCodeReaderUITests.swift */; };
+		5D300E811D6D78A5000401FF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D300E801D6D78A5000401FF /* CameraViewController.swift */; };
+		5D300E831D6D8074000401FF /* DiscoveredBarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D300E821D6D8074000401FF /* DiscoveredBarCodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		5D300E6E1D6D701F000401FF /* SampleBarCodeReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleBarCodeReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D300E721D6D701F000401FF /* SampleBarCodeReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBarCodeReaderUITests.swift; sourceTree = "<group>"; };
 		5D300E741D6D701F000401FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D300E801D6D78A5000401FF /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		5D300E821D6D8074000401FF /* DiscoveredBarCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveredBarCodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				5D300E591D6D701E000401FF /* Assets.xcassets */,
 				5D300E5B1D6D701E000401FF /* LaunchScreen.storyboard */,
 				5D300E5E1D6D701E000401FF /* Info.plist */,
+				5D300E801D6D78A5000401FF /* CameraViewController.swift */,
+				5D300E821D6D8074000401FF /* DiscoveredBarCodeView.swift */,
 			);
 			path = SampleBarCodeReader;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D300E551D6D701E000401FF /* ViewController.swift in Sources */,
+				5D300E831D6D8074000401FF /* DiscoveredBarCodeView.swift in Sources */,
 				5D300E531D6D701E000401FF /* AppDelegate.swift in Sources */,
+				5D300E811D6D78A5000401FF /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +337,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -348,9 +357,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -374,7 +384,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -387,8 +398,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -399,10 +411,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Abdusha M A (HL79JK6V5Q)";
 				INFOPLIST_FILE = SampleBarCodeReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fingent.SampleBarCodeReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reachoutsuite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "faebedc7-125c-4e2a-be6f-3c771d64c94b";
 			};
 			name = Debug;
 		};
@@ -410,10 +425,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Abdusha M A (HL79JK6V5Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Abdusha M A (HL79JK6V5Q)";
 				INFOPLIST_FILE = SampleBarCodeReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fingent.SampleBarCodeReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reachoutsuite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "faebedc7-125c-4e2a-be6f-3c771d64c94b";
 			};
 			name = Release;
 		};
