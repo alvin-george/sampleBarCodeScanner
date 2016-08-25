@@ -45,7 +45,6 @@ class ViewController: UIViewController, UITextFieldDelegate,AVCaptureMetadataOut
         }
 
         captureSession = AVCaptureSession()
-
         let videoCaptureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         let videoInput: AVCaptureDeviceInput
 
@@ -68,7 +67,21 @@ class ViewController: UIViewController, UITextFieldDelegate,AVCaptureMetadataOut
             captureSession.addOutput(metadataOutput)
 
             metadataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
-            metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypePDF417Code]
+            metadataOutput.metadataObjectTypes = [
+                AVMetadataObjectTypeUPCECode,
+                AVMetadataObjectTypeCode39Code,
+                AVMetadataObjectTypeCode39Mod43Code,
+                AVMetadataObjectTypeEAN13Code,
+                AVMetadataObjectTypeEAN8Code,
+                AVMetadataObjectTypeCode93Code,
+                AVMetadataObjectTypeCode128Code,
+                AVMetadataObjectTypePDF417Code,
+                AVMetadataObjectTypeQRCode,
+                AVMetadataObjectTypeAztecCode,
+                AVMetadataObjectTypeUPCECode,
+                AVMetadataObjectTypeInterleaved2of5Code,
+                AVMetadataObjectTypeITF14Code,
+                AVMetadataObjectTypeDataMatrixCode]
         } else {
             failed()
             return
