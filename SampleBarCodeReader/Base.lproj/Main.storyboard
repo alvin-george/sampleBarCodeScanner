@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -37,9 +37,21 @@
                                     <action selector="barCodeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KfK-lV-RaA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUd-ew-xPz">
+                                <rect key="frame" x="10" y="244" width="580" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="afZ-pm-9wp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nUd-ew-xPz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="2LR-ut-zVc"/>
+                            <constraint firstItem="Obs-K2-QYs" firstAttribute="top" secondItem="nUd-ew-xPz" secondAttribute="bottom" constant="20" id="A6z-4g-58t"/>
+                            <constraint firstAttribute="trailing" secondItem="nUd-ew-xPz" secondAttribute="trailing" constant="10" id="CXr-SP-bBh"/>
                             <constraint firstItem="Obs-K2-QYs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="Hy0-bs-F6Q"/>
                             <constraint firstAttribute="trailing" secondItem="O4q-wI-an6" secondAttribute="trailing" constant="10" id="Igi-kD-PzF"/>
                             <constraint firstAttribute="trailing" secondItem="Obs-K2-QYs" secondAttribute="trailing" constant="10" id="OkZ-Md-0K9"/>
@@ -49,6 +61,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="barCodeTypeLabel" destination="nUd-ew-xPz" id="XKP-GI-LU0"/>
                         <outlet property="sampleBarCodeButton" destination="O4q-wI-an6" id="3XU-XM-P1y"/>
                         <outlet property="sampleTextField" destination="Obs-K2-QYs" id="zkE-e5-SmA"/>
                         <segue destination="7IF-fC-ijr" kind="presentation" identifier="segueToCameraViewController" id="aBC-FO-hmq"/>

@@ -12,6 +12,7 @@ import AVFoundation
 
 class ViewController: UIViewController, UITextFieldDelegate,AVCaptureMetadataOutputObjectsDelegate {
 
+    @IBOutlet weak var barCodeTypeLabel: UILabel!
     @IBOutlet weak var sampleTextField: UITextField!
     @IBOutlet weak var sampleBarCodeButton: UIButton!
     var discoveredBarCode:String?
@@ -232,7 +233,10 @@ class ViewController: UIViewController, UITextFieldDelegate,AVCaptureMetadataOut
                     highlightViewRect = barCodeObject.bounds
                     detectionString = (metadata as! AVMetadataMachineReadableCodeObject).stringValue
                     self.captureSession.stopRunning()
+
+                    self.barCodeTypeLabel.text = barCodeObject.type as String
                     AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+
                     self.foundCode(detectionString);
                     previewLayer.removeFromSuperlayer()
                     break
@@ -240,14 +244,14 @@ class ViewController: UIViewController, UITextFieldDelegate,AVCaptureMetadataOut
             }
         }
 
-//
-//        if let metadataObject = metadataObjects.first {
-//            let readableObject = metadataObject as! AVMetadataMachineReadableCodeObject;
-//
-//            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-//            foundCode(readableObject.stringValue);
-//        }
-//        previewLayer.removeFromSuperlayer()
+        //
+        //        if let metadataObject = metadataObjects.first {
+        //            let readableObject = metadataObject as! AVMetadataMachineReadableCodeObject;
+        //
+        //            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        //            foundCode(readableObject.stringValue);
+        //        }
+        //        previewLayer.removeFromSuperlayer()
     }
     func foundCode(code: String) {
         discoveredBarCode = code
